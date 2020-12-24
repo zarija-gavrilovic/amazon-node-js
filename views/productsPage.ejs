@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= category.name %></title>
+    <!-- bootstrap css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/productsPage.css">
+    <link rel="stylesheet" href="/css/footer.css">
+
+    <!-- ICONS MATERIALIZE -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Font Awsome Icon Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- favicon -->
+    <link rel='shortcut icon' type='image/x-icon' href='/images/favicon.ico' />
+</head>
+
+<body>
+    <%- include('partials/header.ejs',{name,numOfItems}); %>
+
+    <div class="products_container">
+        <div>
+            <div class="title">Deals and Promotions</div>
+            <span class="under_title">Shop Today’s Deals, Lightning Deals, and limited-time discounts</span>
+        </div>
+        <div class="top_cover_container">
+            <div class="top_cover_img">
+                <img src="/images/productPageImg.png" alt="amazon_cover_image" />
+            </div>
+        </div>
+
+        <div class="sort_container">
+            <div>
+                <span class="results">Showing 1-48 of 1000 results</span>
+            </div>
+            <div class="sort_subcontainer">
+                <span>Sort by </span>
+                <select value='aa'>
+                    <option value='cao cao'>zoran</option>
+                </select>
+            </div>
+        </div>
+        <div class="main_container">
+            <div class="left_menu">
+
+
+
+
+
+                <div class="department_list">
+                    <ul>
+                        <li class="ul_title"><%= category.subcategories[0].name%></li>
+                        <% 
+                            // if (checked) {
+                            //     for (let i = 1; i < category.subcategories.length; i++) {
+                            //         if (checked.indexOf(category.subcategories[i].name)>=0) {
+                            //             category.subcategories[i].checked = 'true';
+                            //         }
+                            //         console.log(category.subcategories[i].name,category.subcategories[i].checked);
+                            //     }
+                                
+                            // }
+                            %> 
+                        <%for(let i = 1; i< category.subcategories.length; i++){  %>
+                            <li><input type="checkbox" value="<%=category.subcategories[i].name%>" class="checkbox"
+                            data-subcategoryid="<%=category.subcategories[i].name%>" data-categoryid="<%=category._id %>"
+                            <%if(category.subcategories[i].checked=='true'){%> checked <%}else{%> <%}%> /> <%= category.subcategories[i].name%></li> 
+                         
+                        <% } %>
+                    </ul>
+                    <div class="see_more">
+                        <i class="material-icons">expand_more</i>
+                        <a href="#">See more Department</a>
+                    </div>
+                </div>
+                <div class="deal_type_list">
+                    <ul>
+                        <li class="ul_title">Deal Type</li>
+                        <li><a href="#">Deal of the Day</a></li>
+                        <li><a href="#">Deal of the Day</a></li>
+                        <li><a href="#">Deal of the Day</a></li>
+                        <li><a href="#">Prime Early Access Deals</a></li>
+                    </ul>
+                </div>
+                <div class="availability_list">
+                    <ul>
+                        <li class="ul_title">Availability</li>
+                        <li><a href="#">Clear</a></li>
+                        <li><input checked type="checkbox" value="a" /> Upcoming</li>
+                        <li><input checked type="checkbox" value="a" /> Upcoming</li>
+                        <li><input checked type="checkbox" value="a" /> Upcoming</li>
+                    </ul>
+                </div>
+                <div class="price_list">
+                    <ul>
+                        <li class="ul_title">Price</li>
+                        <li><a href="#"> Under $25</a></li>
+                        <li><a href="#">$50 to $100</a></li>
+                        <li><a href="#">$100 to $200</a></li>
+                        <li><a href="#">$200 & Above</a></li>
+                    </ul>
+                </div>
+                <div class="discount_list">
+                    <ul>
+                        <li class="ul_title">Discount</li>
+                        <li><a href="#">10% Off or More</a></li>
+                        <li><a href="#">25% Off or More</a></li>
+                        <li><a href="#">50% Off or More</a></li>
+                        <li><a href="#">70% Off or More</a></li>
+                    </ul>
+                </div>
+                <div class="avg_customer_review_list">
+                    <ul>
+                        <li class="ul_title">Avg. Customer Review</li>
+                        <li>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <a href="#"> & Up</a>
+                        </li>
+                        <li>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <a href="#"> & Up</a>
+                        </li>
+                        <li>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <a href="#"> & Up</a>
+                        </li>
+                        <li>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <a href="#"> & Up</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="main">
+
+
+                <% for(let i=0; i<category.products.length;i++){ %>
+
+
+                <div class="product">
+                    <div class="product_card">
+                        <div class="img_container">
+                            <img src="<%= category.products[i].img %>" alt="product_image" />
+                        </div>
+                        <div class="product_text_container">
+                            <div class="promotion">DEAL OF THE DAY</div>
+                            <div class="product_price">$ <%= category.products[i].price %></div>
+                            <div class="time">Ends in 10:13:20</div>
+                            <div class="product_discount"><a href="#"><%= category.products[i].name %></a></div>
+                            <div class="product_stars">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="global_rating">
+                                    9
+                                </span>
+                            </div>
+                            <form action="/card/<%=category._id%>/add_to_cart/<%=category.products[i]._id%>"
+                                method="POST">
+                                <button id="myButton" type="submit" class="btn btn-warning form-control">Add to
+                                    Cart</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <%  } %>
+            </div>
+        </div>
+        <div class="pagination_container">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-end">
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#" tabindex="-1">Previous</a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">Next</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="footer_cover_img">
+            <img src="/images/productPageFooterCover.jpg" alt="footer_cover_image" />
+        </div>
+    </div>
+
+    <%- include('partials/footer.ejs') %>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script>
+        $('.checkbox').on('click', function () {
+            let subcategoryid = $(this).attr('data-subcategoryid');
+            let categoryid = $(this).attr('data-categoryid');
+            $.ajax({
+                url: `/card/checkedItems`,
+                type: "post",
+                data: { subcategoryid: subcategoryid, categoryid: categoryid }
+            }).then((res, textStatus) => {
+                window.history.pushState(null, null, '/card/checked/categories')
+                window.location.reload();
+
+            });
+        })
+    </script>
+
+</body>
+
+</html>

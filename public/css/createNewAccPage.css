@@ -1,0 +1,121 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+}
+.container >img{
+    margin: auto;
+}
+form{
+    border-radius: 5px;
+    flex-direction: column;
+    margin: auto;
+    display: flex;
+    width: 350px;
+    padding: 14px 18px;
+    
+    border: 1px solid rgba(112, 99, 99, 0.301);
+}
+.title{
+    font-size: 28px;
+    padding-bottom: 4px;
+    margin-bottom: 3px;
+}
+
+.container > form> label{
+    font-size: 14px;
+    font-weight: bold;
+    padding: 2px 2px;
+}
+.container > form > input {
+    padding: 3px 7px;
+    margin-bottom: 15px;
+    border: 1px solid darkgrey;
+}
+.password_info{
+    font-size: 12px;
+    padding: 0;
+    margin-top: -10px;
+    box-sizing: 0;
+}
+
+.container > form > input:hover {
+    box-shadow: 1px 1px .4em rgb(202, 140, 23), -1px -1px .4em  rgb(202, 140, 23);
+    border: 1px solid orange;
+}
+.container > form > button {
+    border: 1px solid darkgrey;
+    font-size: 13px;
+    margin-bottom: 12px;
+    background-color: #F4D27D !important;
+}
+.policy{
+    font-size: 12px;
+    margin-bottom: 22px;
+}
+.policy > a{
+    font-size: 12px;
+    text-decoration: none;
+}
+.hr_line1{
+    margin: auto;
+    border:none;
+    height: 20px;
+    width: 90%;
+    height: 50px;
+    margin-top: 12px;
+    border-bottom: 1px solid grey;
+}
+
+.question{
+    margin-top: 20px;
+    font-size: 13px;
+}
+
+.hr_line{
+    margin: auto;
+    border:none;
+    height: 20px;
+    width: 90%;
+    height: 50px;
+    margin-top: 30px;
+    border-bottom: 1px solid grey;
+}
+
+.footer_form{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    
+}
+.footer_form > ul {
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    padding: 0;
+    margin-top: 25px;
+    margin-bottom: 10px;    
+}
+
+.footer_form > ul > li {
+    padding: 0 15px 0 10px;
+    font-size: 11px;
+    list-style-type: none;
+}
+
+.footer_form > ul > li >a{
+    text-decoration: none;
+}
+.footer_form > span {
+     font-size: 11px;
+}
+
+.help>a:hover, .policy>a:hover{
+    color: orange !important;
+    text-decoration: underline;
+}

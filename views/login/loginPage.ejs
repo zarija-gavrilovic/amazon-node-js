@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="./css/loginPage.css">
+    <!-- bootstrap css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <img src="./images/amazon_logo_white.png" alt="amazon_logo">
+        <form class="form-group" action="/loginPage/email" method="POST">
+            <div class="title">Sign-In</div>
+            <label class="label">Email or mobile phone number</label>
+            <input type="email" class="form-control" placeholder="" name="email"/>
+            <button type="submit" class="btn btn-warning">Continue</button>
+            <div class="policy">By continuing, you agree to Amazon's <a href="#">Conditions of Use</a> and <a
+                    href="#">Privacy Notice.</a></div>
+            <span class="help"><a href="#">Need help?</a></span>
+        </form>
+        <div class="under_form">
+            <span class="background_text">New to Amazon?</span>
+        </div>
+        <div class="btn_amazon_acc">
+            <a href="/createNewAccount"><button type="button" class="btn btn-light">Create your Amazon Account</button></a>
+        </div>
+        <hr class="hr_line">
+
+    </div>
+    
+    <div class="footer_form">
+        <ul>
+            <li><a href="#">Conditions of Use</a></li>
+            <li><a href="#">Privacy Notice</a></li>
+            <li><a href="#">Help</a></li>
+        </ul>
+        <span>© 1996-2020, Amazon.com, Inc. or its affiliates</span>
+    </div>
+
+
+    <!-- bootstrap script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

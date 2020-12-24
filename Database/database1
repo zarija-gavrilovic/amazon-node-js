@@ -1,0 +1,102 @@
+CATEGORY
+id
+name
+NumberofProduct
+img
+subcatoegries
+
+
+
+PRODUCT ATRIBURES
+id
+name
+price [range]
+time end
+discount
+Stars
+views
+category
+availability [in stock || out of stock]
+quantity
+img
+dealtype "deal of the day"
+description
+
+
+link da lakse nadjes
+IZMESLI VIWES I STARS[0-5]
+
+{
+    "name":"",
+    "price": ,
+    "category":"",
+    "img":"./images/Electronics/Product2.jpg",
+    "link":"",
+    "timeend": 0,
+    "discount": 0,
+    "stars":0,
+    "views":0,
+    "availability": "in stock",
+    "quantity": 100,
+    "dealtype":"",
+    "description":""
+}
+
+
+
+C:\Program Files\MongoDB\Server\4.2\bin>.\mongoimport.exe --db amazon_nodejs --file "C:\Users\Zarija\Desktop\NodeJS\Amazon Node Js\categories.json"
+za liste:
+C:\Program Files\MongoDB\Server\4.2\bin>.\mongoimport.exe --db amazon_nodejs --collection categories --file "C:\Users\Zarija\Desktop\NodeJS\Amazon Node Js\Database\categories.json" --jsonArray
+
+IZDVAJANJE 1 PRODUCTA iz LISTE PRODUCTA:
+db.categories.find({"products._id":130},{'products.$':1}).pretty()
+
+
+
+
+
+
+
+
+
+
+
+
+[
+    {
+        "_id": "5fdca6f16be3a3dde411dc71",
+        "name": "Arts & Crafts",
+        "img": "/images/categories/Arts & Crafts.jpg",
+        "subcategories": [
+            "Painting, Drawing & Art Supplies",
+            "Beading & Jewelry Making",
+            "Crafting",
+            "Fabric",
+            "Fabric Decorating",
+            "Knitting & Crochet",
+            "Needlework",
+            "Organization, Storage & Transport",
+            "Printmaking",
+            "Scrapbooking & Stamping",
+            "Sewing"
+        ],
+        "products": [
+            {
+                "name": "Pentel Arts Oil Pastels, 50 Color Set (PHN-50)",
+                "price": 10.99,
+                "category": "Painting, Drawing & Art Supplies",
+                "img": "./images/Arts & Crafts/Product1.jpg",
+                "link": "https://www.amazon.com/Pentel-Arts-Pastels-Color-PHN-50/dp/B00LFCWSPM/ref=sr_1_4?dchild=1&qid=1608247483&s=arts-crafts-intl-ship&sr=1-4",
+                "timeend": 0,
+                "discount": 0,
+                "stars": 0,
+                "views": 0,
+                "availability": "in stock",
+                "quantity": 100,
+                "dealtype": "",
+                "description": "",
+                "_id": 120
+            }
+        ]
+    }
+]

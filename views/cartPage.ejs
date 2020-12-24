@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart Page</title>
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/cartPage.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <!-- bootstrap css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <!-- ICONS MATERIALIZE -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Font Awsome Icon Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- favicon -->
+    <link rel='shortcut icon' type='image/x-icon' href='./images/favicon.ico' />
+</head>
+
+<body>
+    <%- include('partials/header.ejs',{name,numOfItems}); %>
+    <div class="main_container">
+        <div class="main">
+            <div class="empty_cart display_cart" <% if(numOfItems==0){%> style="display: block;"<%}else{%>style="display: none;"<%}%>>
+                <div class="empty_cart_title">Your Amazon Cart is empty.</div>
+                <div class="empty_cart_text">
+                    Your Shopping Cart lives to serve. Give it purpose — fill it with groceries, clothing, household
+                    supplies, electronics, and more.
+                    <br>
+                    Continue shopping on the Amazon.com homepage, learn about today's deals, or visit your Wish List.
+                </div>
+
+            </div>
+
+            <div class="full_cart_container" <% if(numOfItems!=0){%> style="display: block;"<%}else{%>style="display: none;"<%}%>>
+                <div class="full_cart_title">
+                    Shopping Cart
+                </div>
+                <div class="full_cart_deselect">
+                    Deselect all items
+                </div>
+                <div class="full_cart_price">
+                    Price
+                </div>
+
+                <% for(let i =0; i<products.length; i++){ %>
+
+                <div class="full_cart_product">
+                    <div class="full_cart_product_checked">
+                        <input type="checkbox" value="selected" />
+                    </div>
+                    <div class="full_cart_product_img">
+                        <img src=".<%=products[i].img%>" alt="product_img" />
+                    </div>
+                    <div class="full_cart_product_desc">
+                        <div class="full_cart_product_title_container">
+                            <div class="full_cart_product_title">
+                                <%= products[i].name %>
+                            </div>
+                            <div class="full_cart_product_price">
+                                $ <%= products[i].price%>
+                            </div>
+                        </div>
+
+                        <div class="full_cart_product_stock">
+                            In Stock
+                        </div>
+                        <div class="full_cart_product_gift">
+                            <input type="checkbox" value="gift" />
+                            <div class="full_cart_product_gift_text">
+                                This is a gift <a href="#">Learn more</a>
+                            </div>
+                        </div>
+                        <div class="full_cart_product_qty">
+                            <select name="qty">
+                                <option value="1">Qty: 1</option>
+                                <option value="2">Qty: 2</option>
+                                <option value="3">Qty: 3</option>
+                                <option value="4">Qty: 4</option>
+                                <option value="5">Qty: 5</option>
+                                <option value="10">Qty: 10</option>
+                                <option value="15">Qty: 15</option>
+                                <option value="20">Qty: 20</option>
+                                
+                            </select>
+                            <div class="full_cart_product_options">
+                                <span class="delete-btn" type="button" data-id="<%=products[i]._id%>">Delete</span>
+                                <span>Save for later</span>
+                                <span>Compare with similar items</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <% } %>
+                <div class="total">
+                <% let total = 0; let item = 0; for(let i = 0; i<products.length;i++){ total = total + products[i].price; item++; }%> 
+                        Subtotal (<%=item%> item): <span class="full_cart_product_price">$ <%=parseFloat(total).toFixed(2);%></span>
+                </div>
+            </div>
+
+
+
+            <div class="your_items">
+                <div class="your_items_title">Your Items</div>
+                <div class="your_items_navbar">
+                    <span class="your_items_option">
+                        <a href="#">No items saved for later</a>
+                    </span>
+                    <span class="your_items_option">
+                        <a href="#">Buy it again</a>
+                    </span>
+                    <hr class="your_items_hr">
+                    <span class="your_items_text">No items to Buy again.</span>
+                </div>
+            </div>
+
+            <div class="text_info">
+                The price and availability of items at Amazon.com are subject to change. The Cart is a temporary place
+                to store a list of your items and reflects each item's most recent price. Shopping CartLearn more
+
+                Do you have a gift card or promotional code? We'll ask you to enter your claim code when it's time to
+                pay.
+            </div>
+        </div>
+
+
+        <div>
+            <form action='cart/buy' method="POST" class="total_container" <% if(numOfItems==0){%> style="display: none;"<%}else{%>style="display: block;"<%}%>>
+                <div class="total_container_title">
+                    Subtotal (<%=item%> item): <span class="total_container_price"> $ <%=parseFloat(total).toFixed(2);%></span>
+                </div>
+                <div class="total_container_gift">
+                    <input type="checkbox" value="gift" />
+                    <div class="total_container_gift_text">This order contains a gift</div>
+                </div>
+                <input name='total' value="<%=parseFloat(total).toFixed(2);%>" style="display: none;"/>
+                <input name='cart' value="<%=JSON.stringify(products)%>" style="display: none;"/>
+                <button type="submit" class="btn">Proceed to checkout</button>
+
+            </form>
+    
+    
+            <div class="right_side_container">
+                
+                <div class="recently_viewed_items">
+                    <div class="recently_viewed_items_title">Your recently viewed items</div>
+    
+                    <% for(let i = 0; i<4; i++) { %>
+                    <div class="right_side_product">
+                        <div class="r_s_img">
+                            <img src="./images/cartPageProduct.jpg" alt="product_image" />
+                        </div>
+                        <div class="r_s_text_container">
+                            <span class="r_s_text_title">
+                                Styles Font 2020
+                            </span>
+                            <div class="r_s_text_star">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                60
+                            </div>
+                            <div class="r_s_text_price">$ 0.00</div>
+                            <button type="button" class="btn">Add to Cart</button>
+                        </div>
+                    </div>
+    
+                    <% } %>
+    
+                </div>
+            </div>
+        </div>
+        
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <%- include('partials/footer.ejs') %>
+    <!-- bootstrap scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous">
+        </script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script>
+        $('.delete-btn').on('click',function() {
+            let id = $(this).attr('data-id');
+            console.log(id);
+            $.ajax({
+                url:`/cart/${id}`,
+                success: function(){ location.reload()}
+            })
+            .then(res => {
+                
+            })        
+        })
+
+    </script>
+</body>
+
+</html>

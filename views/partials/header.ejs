@@ -1,0 +1,73 @@
+<header>
+    <div class="header">
+        <a href="/" class="header_img">
+            <img  src="/images/amazon_logo.png" alt="amazon_logo" />
+        </a>
+        <div class="header_location">
+            <i class="material-icons">location_on</i>
+            <div>
+                <span>Deliver to</span>
+                <h5>Serbia</h5>
+            </div>
+        </div>
+
+        <div class="header_search">
+              <div class="input-field">
+                  <div class="search_input">
+                    <input id="search" type="search" required >
+                  </div>
+                <!-- <input id="search" type="search" required class="input-group-append"> -->
+                <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+              </div>
+        </div>
+
+        <div class="header_language">
+            <i class="material-icons">language<i class="material-icons">arrow_drop_down</i></i>
+        </div>
+        <div class="header_signin">
+            <a href="/loginPage">
+                <span>Hello, <%= name %></span>
+                <h5>Account & Lists<i class="material-icons">arrow_drop_down</i></h5>
+            </a>    
+                <div class="dropdown_menu">
+                    <a href="/logout">Sign Out</a>
+                </div>
+        </div>
+        
+        <div class="header_orders">
+            <span>Returns</span>
+            <h5>& Orders</h5>
+        </div>
+
+        <a href="/cart" class="header_shoppingcart">
+            <img src="/images/shopping_cart1.png" alt="shopping cart" />
+            <div class="numberOfItemsCart"><%= numOfItems %></div>
+        </a>
+    </div>
+    <div class="nav_bar">
+        <ul>
+            <div class="nav_bar_menu">
+                
+                    <i class="material-icons">menu</i> 
+                    <b> <div>All</div>
+                </b>
+            </div>
+            <li>
+                Today's Deals
+            </li>
+            <li>
+                Customer Service
+            </li>
+            <li>
+                Gift Cards
+            </li>
+            <li>
+                Sell
+            </li>
+            <li>
+                Registry
+            </li>
+        </ul>
+    </div>
+
+</header>
