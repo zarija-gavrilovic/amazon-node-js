@@ -1,29 +1,31 @@
-#Amazon Clone
+# Amazon Clone
 
-##Server starting:
+## Server starting:
 1. Navigate to folder
 2. npm start :rocket: 
 
-Underscores
+__________________________________________________________
 
 
-##Database Info
-PRODUCT ATRIBURES{
-    id
-    name
-    price [range]
-    time end
-    discount
-    Stars
-    views
-    category
-    availability [in stock || out of stock]
-    quantity
-    img
-    dealtype "deal of the day"
-    description
-}
+## Database Info
 
+```JSON
+    Product{
+        id
+        name
+        price [range]
+        time end
+        discount
+        Stars
+        views
+        category
+        availability [in stock || out of stock]
+        quantity
+        img
+        dealtype "deal of the day"
+        description
+    }
+```
 
 DataBase: MonogDB
 Import:
