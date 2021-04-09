@@ -36,19 +36,22 @@ _______________________________________________________
     }
 ```
 
-DataBase: MonogDB
-Import:
--> .\mongoimport.exe --db amazon_nodejs --file "<PATH TO JSON FOLDER>"
-Example:
--> .\mongoimport.exe --db amazon_nodejs --file "<C:\......\categories.json>"
+### Import 
 
-Import List:
--> .\mongoimport.exe --db amazon_nodejs --collection categories --file "<PATH TO JSON LIST>" --jsonArray
-Example:
-->.\mongoimport.exe --db amazon_nodejs --collection categories --file "C:\......\categories.json" --jsonArray
+All necessary data are storaged in Database folder.
+categories2.json is a list of categories.
+Inside the folder "Products" you have products for each category.
 
-[^1]: All necessary data are storaged in Database folder.
-[^1]: categories2.json is a list of categories.
-[^1]: Inside the folder "Products" you have products for each category.
+DataBase: MonogDB  
+Import:  
+-> .\mongoimport.exe --db amazon_nodejs --file "<PATH TO JSON FOLDER>"  
+Example:  
+-> .\mongoimport.exe --db amazon_nodejs --file "<C:\......\categories.json>"  
+  
+Import List:  
+-> .\mongoimport.exe --db amazon_nodejs --collection categories --file "<PATH TO JSON LIST>" --jsonArray  
+Example:  
+->.\mongoimport.exe --db amazon_nodejs --collection categories --file "C:\......\categories.json" --jsonArray  
 
-Underscores
+ 
+__________________________________________________________
