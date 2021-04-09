@@ -7,12 +7,21 @@
 __________________________________________________________
 
 
+## Technologies:
+
+1. NodeJS
+2. EJS
+3. MongoDB
+
+
+_______________________________________________________
+
 ## Database Info
 
-```JSON
+```
     Product{
-        id
-        name
+        id,
+        name,
         price [range]
         time end
         discount
@@ -22,7 +31,7 @@ __________________________________________________________
         availability [in stock || out of stock]
         quantity
         img
-        dealtype "deal of the day"
+        dealtype
         description
     }
 ```
@@ -38,8 +47,8 @@ Import List:
 Example:
 ->.\mongoimport.exe --db amazon_nodejs --collection categories --file "C:\......\categories.json" --jsonArray
 
-All necessary data are storaged in Database folder.
-categories2.json is a list of categories.
-Inside the folder "Products" you have products for each category.
+[^1]: All necessary data are storaged in Database folder.
+[^1]: categories2.json is a list of categories.
+[^1]: Inside the folder "Products" you have products for each category.
 
 Underscores
