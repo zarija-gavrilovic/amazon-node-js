@@ -1,7 +1,7 @@
 # Amazon Clone
 
 ## Server starting:
-1. Navigate to folder
+1. Navigate to folder :point_right:
 2. npm start :rocket: 
 
 __________________________________________________________
@@ -43,15 +43,16 @@ categories2.json is a list of categories.
 Inside the folder "Products" you have products for each category.
 
 DataBase: MonogDB  
-Import:  
--> .\mongoimport.exe --db amazon_nodejs --file "<PATH TO JSON FOLDER>"  
-Example:  
--> .\mongoimport.exe --db amazon_nodejs --file "<C:\......\categories.json>"  
   
-Import List:  
--> .\mongoimport.exe --db amazon_nodejs --collection categories --file "<PATH TO JSON LIST>" --jsonArray  
+**Import:**  
+*-> .\mongoimport.exe --db amazon_nodejs --file "PATH TO JSON FOLDER"*  
 Example:  
-->.\mongoimport.exe --db amazon_nodejs --collection categories --file "C:\......\categories.json" --jsonArray  
+*-> .\mongoimport.exe --db amazon_nodejs --file "C:\......\categories.json"*  
+  
+**Import List:**  
+*-> .\mongoimport.exe --db amazon_nodejs --collection categories --file "PATH TO JSON LIST" --jsonArray*  
+Example:  
+*->.\mongoimport.exe --db amazon_nodejs --collection categories --file "C:\......\categories.json" --jsonArray*  
 
  
 __________________________________________________________
