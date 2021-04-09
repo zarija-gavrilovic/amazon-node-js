@@ -1,3 +1,4 @@
+
 const mongojs = require('mongojs');
 const db = mongojs('amazon_nodejs', ['users','categories']);
 

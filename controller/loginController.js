@@ -9,7 +9,6 @@ const loginController = (req,res) => {
             
             if(docs.length !== 0){
                 //email is valid
-                console.log(req.session);
                 res.render('login/passwordPage',{email})
             }else{
                 //email is not valid

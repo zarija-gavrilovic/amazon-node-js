@@ -28,11 +28,6 @@ app.use(session({
 app.use('/',routes)
 
 
-const helper = require('./helper');
-app.get('/myjson',(req,res) => {
-    helper.json(req,res);
-})
-
 app.listen(PORT, () => {
     console.log(`Server radi na portu ${PORT}`);
 })
