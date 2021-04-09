@@ -8,7 +8,6 @@ const homeController = (req,res) => {
     }
     
     db.categories.find({},(err,categories) => {
-        //URL: "Men's_Fashion"
         for(let i = 0; i< categories.length; i++){
             categories[i].url = categories[i].name.replace(/ /g,"_");
         }

@@ -12,7 +12,6 @@ const loginPasswordController = (req, res) => {
                 let user = docs[0];
                 if (password === user.password) {
                     req.session.user = user;
-                    // -----------------------------------------------
                     res.redirect('/')
                 } else {
                     message = 'Incorrect password!'
