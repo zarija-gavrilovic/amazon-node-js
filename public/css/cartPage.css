@@ -5,7 +5,6 @@
 }
 
 .main{
-    /* background-color: yellow; */
     flex:1
 }
 
@@ -176,27 +175,23 @@
 .full_cart_price{
     font-size: 14px;
     color: #0F1111;
-    /* background-color: yellow; */
     text-align: end;
     border-bottom: 1px solid  #DDD;
 }
 
 .full_cart_product{
     display: flex;
-    /* background-color: green; */
     border-bottom: 1px solid #DDD;
 }
 
 .full_cart_product_checked{
     display: flex;
     align-items: center;
-    /* background-color: pink; */
     margin-left: 3px;
     padding-right: 19px;
 }
 
 .full_cart_product_img{
-    /* background-color: yellowgreen; */
     display: flex;
     align-items: center;
     padding: 10px 0 10px 0;
@@ -207,7 +202,6 @@
 }
 
 .full_cart_product_desc{
-    /* background-color: blue; */
     padding: 2px 0px 2px 5px;
     width: 100%;
 }

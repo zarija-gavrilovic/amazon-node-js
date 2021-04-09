@@ -2,10 +2,6 @@
     margin: 0;
     padding: 0;
 }
-/* html,body{
-    margin: 0;
-    height: 100%; 
-} */
 header{
     background-color: #EAEDED;
 }
@@ -32,9 +28,6 @@ h5{
 }
 
 .header_location{
- /*   align-items: center;
-    display: flex;
-    height: 50px; */
     display: flex;
     margin: 4px 0px 4px 6px;
     padding: 10px 10px 0 5px;
@@ -42,13 +35,6 @@ h5{
     text-decoration: none;
     color: white;
 }
-/* .header_orders{
-    margin: 4px 6px 4px 6px;
-    padding: 10px 5px 0 5px;
-    line-height: 5px;
-    text-decoration: none;
-    color: white;
-} */
 
 .header_location:hover{
     border: 1px solid white;
@@ -166,9 +152,6 @@ h5{
     text-decoration: none;
     color: black;
 }
-
-
-
 
 .header_orders{
     margin: 4px 6px 4px 6px;

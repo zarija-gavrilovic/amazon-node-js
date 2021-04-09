@@ -40,32 +40,17 @@
             </div>
             <div class="sort_subcontainer">
                 <span>Sort by </span>
-                <select value='aa'>
-                    <option value='cao cao'>zoran</option>
+                <select value='value'>
+                    <option value='first'>date</option>
                 </select>
             </div>
         </div>
         <div class="main_container">
             <div class="left_menu">
 
-
-
-
-
                 <div class="department_list">
                     <ul>
                         <li class="ul_title"><%= category.subcategories[0].name%></li>
-                        <% 
-                            // if (checked) {
-                            //     for (let i = 1; i < category.subcategories.length; i++) {
-                            //         if (checked.indexOf(category.subcategories[i].name)>=0) {
-                            //             category.subcategories[i].checked = 'true';
-                            //         }
-                            //         console.log(category.subcategories[i].name,category.subcategories[i].checked);
-                            //     }
-                                
-                            // }
-                            %> 
                         <%for(let i = 1; i< category.subcategories.length; i++){  %>
                             <li><input type="checkbox" value="<%=category.subcategories[i].name%>" class="checkbox"
                             data-subcategoryid="<%=category.subcategories[i].name%>" data-categoryid="<%=category._id %>"
@@ -154,9 +139,7 @@
             </div>
             <div class="main">
 
-
                 <% for(let i=0; i<category.products.length;i++){ %>
-
 
                 <div class="product">
                     <div class="product_card">

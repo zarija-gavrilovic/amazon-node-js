@@ -16,7 +16,6 @@ body{
 
 .under_title{
     font-size: 15px;
-    /* letter-spacing: 0.55px; */
 }
 
 .top_cover_container{
@@ -161,7 +160,6 @@ body{
     
 }
 .product{
-    /* height: min-content; */
     padding-bottom: 3px;
     border: 1px solid #DDDDDD;
     min-height: 450px;
